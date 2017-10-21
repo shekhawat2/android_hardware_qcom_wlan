@@ -622,8 +622,7 @@ int NanCommand::putNanPublish(transaction_id id, const NanPublishRequest *pReq)
 
     pFwReq->publishServiceReqParams.ttl = pReq->ttl;
     pFwReq->publishServiceReqParams.period = pReq->period;
-    pFwReq->publishServiceReqParams.replyIndFlag =
-                                   (pReq->recv_indication_cfg & BIT_3) ? 0 : 1;
+    pFwReq->publishServiceReqParams.reserved = 0;
     pFwReq->publishServiceReqParams.publishType = pReq->publish_type;
     pFwReq->publishServiceReqParams.txType = pReq->tx_type;
 
